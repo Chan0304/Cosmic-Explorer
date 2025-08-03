@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Galaxy - Journey Through the Stars</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cosmic Background Elements -->
+    <div class="cosmic-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="clouds"></div>
+        <div class="nebula"></div>
+        <div class="shooting-stars"></div>
+    </div>
+
+    <!-- Audio Player -->
+    <div class="audio-player">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-music"></i>
+        </button>
+        <audio id="backgroundMusic" loop>
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="cosmic-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-galaxy"></i>
+                <span>Cosmic Galaxy</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#explore" class="nav-link">Explore</a></li>
+                <li><a href="#meditation" class="nav-link">Meditation</a></li>
+                <li><a href="#wisdom" class="nav-link">Wisdom</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="cosmic-title">
+                <h1 class="glitch" data-text="Cosmic Galaxy">Cosmic Galaxy</h1>
+                <p class="hero-subtitle">Journey Through the Infinite Universe</p>
+            </div>
+            <div class="hero-buttons">
+                <button class="cta-btn primary" onclick="startJourney()">
+                    <span>Begin Journey</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+                <button class="cta-btn secondary" onclick="exploreGalaxy()">
+                    <span>Explore Galaxy</span>
+                    <i class="fas fa-star"></i>
+                </button>
+            </div>
+        </div>
+        <div class="floating-elements">
+            <div class="planet planet-1"></div>
+            <div class="planet planet-2"></div>
+            <div class="planet planet-3"></div>
+            <div class="asteroid"></div>
+            <div class="comet"></div>
+        </div>
+    </section>
+
+    <!-- Explore Section -->
+    <section id="explore" class="explore-section">
+        <div class="container">
+            <h2 class="section-title">Explore the Cosmos</h2>
+            <div class="galaxy-grid">
+                <div class="galaxy-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <h3>Lunar Meditation</h3>
+                    <p>Connect with the moon's energy and find inner peace</p>
+                    <button class="explore-btn" onclick="startLunarMeditation()">
+                        <span>Begin</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="galaxy-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Stellar Connection</h3>
+                    <p>Align with distant stars and cosmic energy</p>
+                    <button class="explore-btn" onclick="startStellarConnection()">
+                        <span>Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="galaxy-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Infinite Wisdom</h3>
+                    <p>Access ancient cosmic knowledge and insights</p>
+                    <button class="explore-btn" onclick="accessWisdom()">
+                        <span>Discover</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meditation Section -->
+    <section id="meditation" class="meditation-section">
+        <div class="container">
+            <h2 class="section-title">Cosmic Meditation</h2>
+            <div class="meditation-container">
+                <div class="breathing-circle" id="breathingCircle">
+                    <div class="breathing-content">
+                        <span id="breathingText">Breathe In</span>
+                        <div class="breathing-timer" id="breathingTimer">4</div>
+                    </div>
+                </div>
+                <div class="meditation-controls">
+                    <button class="meditation-btn" id="startMeditation">
+                        <i class="fas fa-play"></i>
+                        <span>Start Meditation</span>
+                    </button>
+                    <button class="meditation-btn secondary" id="resetMeditation">
+                        <i class="fas fa-redo"></i>
+                        <span>Reset</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wisdom Section -->
+    <section id="wisdom" class="wisdom-section">
+        <div class="container">
+            <h2 class="section-title">Cosmic Wisdom</h2>
+            <div class="wisdom-container">
+                <div class="wisdom-quote" id="wisdomQuote">
+                    <blockquote>
+                        "The universe is not outside of you. Look inside yourself; everything that you want, you already are."
+                    </blockquote>
+                    <cite>- Cosmic Wisdom</cite>
+                </div>
+                <button class="wisdom-btn" onclick="getNewWisdom()">
+                    <i class="fas fa-sparkles"></i>
+                    <span>New Wisdom</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2 class="section-title">Cosmic Community</h2>
+            <div class="community-grid">
+                <div class="community-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Join Our Family</h3>
+                    <p>Connect with fellow cosmic travelers</p>
+                    <button class="community-btn" onclick="joinCommunity()">
+                        <span>Join Now</span>
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="community-card">
+                    <div class="card-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Cosmic Events</h3>
+                    <p>Participate in guided meditation sessions</p>
+                    <button class="community-btn" onclick="viewEvents()">
+                        <span>View Events</span>
+                        <i class="fas fa-calendar-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact the Cosmos</h2>
+            <div class="contact-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Cosmic Message" required></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cosmic-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Cosmic Galaxy. May the stars guide your journey.</p>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Elements -->
+    <div class="cosmic-particles" id="cosmicParticles"></div>
+    <div class="cosmic-cursor" id="cosmicCursor"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
